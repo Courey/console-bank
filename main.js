@@ -35,12 +35,16 @@ function getTransactionAmt(){ // prompts for transaction amount
   return amount;
 }
 
-function deposit(amount){ // adds deposit to balance
-  if(amount > 500){
-    return balance += amount +25;
+function deposit(x){ // adds deposit to balance
+  if(x >= 500){
+    var deposit = x + 25;
+    balance += deposit;
+    return balance;
   }
   else{
-    return balance += amount;
+    var deposit = x;
+    balance += deposit;
+    return balance;
   }
 }
 
@@ -58,13 +62,12 @@ function testBalance(x, y){ // tests to see what the balance is after withdrawl
   }
   else{
     accountActive = false;
-    debugger;
     console.log('your account has been deactivated.');
   }
 }
 
 function getBalance(x){
-  if (accountActive === 'true'){
+  if (accountActive !== false){
     console.log('Your current ballance is: ' + x);
   }
 }
